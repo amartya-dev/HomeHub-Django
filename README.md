@@ -72,8 +72,14 @@ Clone the repository
 - To generate:
   ```python
   from utils.qr_code_utils import generate_qr_code
+  from PIL import Image
   
-  generate_qr_code("test")
+  image = generate_qr_code("test")
+  image = Image.fromarray(image)
+  # View the image
+  image.show()
+  image.save("hello.png")
+  
   ```
 - To decode:
   ```python
