@@ -63,6 +63,25 @@ Clone the repository
    - response (on succesful):
     ```json
     {
-      "message": "created succesfully",
+      "message": "created succesfully"
     }
    ```
+
+# Utils
+## QR-Code
+- To generate:
+  ```python
+  from utils.qr_code_utils import generate_qr_code
+  
+  generate_qr_code("test")
+  ```
+- To decode:
+  ```python
+  from utils.qr_code_utils import decode_qr_code
+  from PIL import Image
+  import numpy as np
+  
+  image = Image.open("test.png")
+  image_np = np.array(image)
+  print(decode_qr_code(image_np=image_np))  
+  ```
